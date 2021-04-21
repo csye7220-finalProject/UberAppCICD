@@ -18,7 +18,7 @@ spec:
         spec:
             containers:
                 - name: uber-py-container
-                  image: 909121039405.dkr.ecr.us-west-2.amazonaws.com/uber-be:prod
+                  image: daryanileena/uberbackend:latest
                   imagePullPolicy: Always
                   ports:
                       - containerPort: 5000
