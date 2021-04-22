@@ -22,6 +22,11 @@ spec:
                   imagePullPolicy: Always
                   ports:
                       - containerPort: 5000
+                      resources:
+                          limits:
+                            cpu: 500m
+                          requests:
+                            cpu: 200m
 ---
 apiVersion: v1
 kind: Service
@@ -38,3 +43,17 @@ spec:
           targetPort: 5000
     selector:
         app: py-pod
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: php-apache
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
