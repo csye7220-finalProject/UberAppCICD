@@ -86,6 +86,8 @@ spec:
         image: k8s.gcr.io/metrics-server-amd64:v0.3.6
         imagePullPolicy: IfNotPresent
         args:
+          - --kubelet-insecure-tls
+          - --kubelet-preferred-address-types=InternalIP
           - --cert-dir=/tmp
           - --secure-port=4443
         ports:
