@@ -28,4 +28,4 @@ phases:
       - ls -la
       - echo Push the latest image to cluster
       - kubectl apply -f backend-deployment.yml
-      - kubectl apply -f frontend-deployment.yml
+      
