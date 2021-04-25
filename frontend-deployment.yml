@@ -22,7 +22,7 @@ spec:
         spec:
             containers:
                 - name: frontend-container
-                  image: daryanileena/uberfrontend:latest
+                  image: 909121039405.dkr.ecr.us-west-2.amazonaws.com/uber-fe:prod
                   imagePullPolicy: Always
                   ports:
                       - containerPort: 80
